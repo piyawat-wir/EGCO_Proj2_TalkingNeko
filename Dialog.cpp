@@ -5,7 +5,6 @@ Dialog::Dialog(string ctt) {
 	cattalk = ctt;
 }
 Dialog::~Dialog() {
-	cout << "Dialog class destructor." << endl; 
 }
 const string& Dialog::getCtt() const {
 	return cattalk;

@@ -2,11 +2,12 @@
 #define DIALOG_H
 #include<string>
 class Dialog {
-	string sentence;
+protected:
+	string cattalk;
 public:
-	Dialog(string sen);
+	Dialog(string ctt);
 	~Dialog();
-	const string& getSen() const;
+	const string& getCtt() const;
 	friend ostream& operator<< (ostream& s, const Dialog& dia);
 };
 

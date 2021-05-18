@@ -1,16 +1,16 @@
 #include<iostream>
 using namespace std;
 #include "Dialog.h"
-Dialog::Dialog(string sen) {
-	sentence = sen;
+Dialog::Dialog(string ctt) {
+	cattalk = ctt;
 }
 Dialog::~Dialog() {
 	cout << "Dialog class destructor." << endl; 
 }
-const string& Dialog::getSen() const {
-	return sentence;
+const string& Dialog::getCtt() const {
+	return cattalk;
 }
-ostream& operator<< (ostream& s, const Dialog& dia) {
-	s << dia.sentence;
+ostream& operator<< (ostream& s, const Dialog& x) {
+	s << x.cattalk << "?" << endl;
 	return s;
 }

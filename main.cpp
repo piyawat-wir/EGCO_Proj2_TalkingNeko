@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
-#include"Point.h"
+#include"ChoiceDialog.h"
 
 int main(){
-	Dialog a("Hello");
-	Point b("Wow", 10);
-
-	cout << a << endl;
-	cout << b << endl;
+	string str[] = { "a","b", "c", "d", "e"};
+	ChoiceDialog a("How are you",str,5);
+	a.display(5);
 
 	return 0;
 }

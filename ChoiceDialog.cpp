@@ -1,21 +1,27 @@
 #include<iostream>
+#include<string>
+#include <stdlib.h>
 using namespace std;
 #include"ChoiceDialog.h"
-ChoiceDialog::ChoiceDialog(const string ctt, const string choi1, const string choi2, const string choi3, const string choi4) : Dialog(ctt){
-	choices = new string[SIZE];
-	choices[0] = choi1;
-	choices[1] = choi2;
-	choices[2] = choi3;
-	choices[3] = choi4;
+
+ChoiceDialog::ChoiceDialog(const string ctt, string* c,int Size) : Dialog(ctt){
+	choices = new string[Size];
+	for (int i = 0; i < Size; i++)
+		choices[i] = c[i];
 }
 ChoiceDialog::~ChoiceDialog() {
 	delete[] choices;
 }
-ostream& operator<< (ostream& s, const ChoiceDialog& x) {
-	s << static_cast<Dialog>(x) << endl;
-	s << "1. " << x.choices[0] << endl;
-	s << "2. " << x.choices[1] << endl;
-	s << "3. " << x.choices[2] << endl;
-	s << "4. " << x.choices[3] << endl;
-	return s;
+void ChoiceDialog::display(int Size) const {
+	cout << static_cast<Dialog>(*this) << endl;
+	for (int i = 0; i < Size; i++)
+		cout << (i + 1) << "." << choices[i] << endl;
 }
+/*ostream& operator<< (ostream& s, const ChoiceDialog& x) {
+	s << static_cast<Dialog>(x) << endl;
+	int Size = sizeof(x.choices) / sizeof(x.choices[0]);
+	for (int i = 0; i < Size; i++) {
+		cout << (i + 1) << "." << x.choices[i];
+	}
+	return s;
+}*/

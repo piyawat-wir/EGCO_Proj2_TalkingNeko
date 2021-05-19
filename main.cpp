@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include"ChoiceDialog.h"
+#include"lib/ChoiceDialog.h"
 
 int main(){
 	string str[] = { "a","b", "c", "d", "e"};

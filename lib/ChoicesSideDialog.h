@@ -33,9 +33,9 @@ int ChoicesSideDialog::display() {
     //Display navigation details
     printColor(NAV_UPDOWN NAV_ENTER, sx, sy+h, w);
     //Display text
-    printColor(text, sx+6, sy+3, w-10, 30);
+    printColor(text, sx+6, sy+3, w-8, 30);
 
-    return selectChoices(choices, choicesN, sx+6, sy+8, w-14);
+    return selectChoices(choices, choicesN, sx+6, sy+8, w-12);
 }
 
 #endif // CHOICESSIDEDIALOG_H

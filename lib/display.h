@@ -58,6 +58,7 @@ void setColor(int ForgC, int BackC) {
 void resetColor() {
     setColor(7,0);
 }
+
 int printColor(string str, int x=0, int y=0, int maxwidth=0, int animrate=0) {
     int i, j, Fc, Bc;
     char a[] = "0\0", b[] = "0\0";
@@ -161,8 +162,12 @@ void displayChoices(string *choices, int choicesN, int select=0, int sx=0, int s
 
         // Display choices text
         resetColor();
-        if (i == select) y = printColor("&90"+choices[i], x+4, y, textwidth);
-        else y = printColor(choices[i], x+4, y, textwidth);
+        if (i == select) {
+            setColor(9,0);
+            y = printColor(choices[i], x+4, y, textwidth);
+        } else {
+            y = printColor(choices[i], x+4, y, textwidth);
+        }
     }
     resetColor();
     resetxy();
